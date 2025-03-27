@@ -1,10 +1,12 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+window.onload = () => {
+  const rootElement = document.getElementById("ai-readiness");
+  if (rootElement) {
+    createRoot(document.getElementById("ai-readiness")).render(<App />);
+  } else {
+    console.error("The root element with id 'ai-readiness' was not found.");
+  }
+};
